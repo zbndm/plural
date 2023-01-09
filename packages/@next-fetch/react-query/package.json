@@ -1,0 +1,40 @@
+{
+  "name": "@next-fetch/react-query",
+  "version": "0.0.2",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "client-loader/package.json",
+    "client/package.json",
+    "dist/**/*",
+    "form/package.json",
+    "server-loader/package.json",
+    "server/package.json"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "# vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@tanstack/react-query": "^4.0.10"
+  },
+  "devDependencies": {
+    "@tanstack/react-query": "^4.0.10",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.5",
+    "next": "^12.2.4",
+    "@next-fetch/core-plugin": "workspace:^0.0.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "tsup": "^6.0.1",
+    "typescript": "^4.7.2",
+    "vitest": "^0.20.2"
+  }
+}

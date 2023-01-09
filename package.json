@@ -1,36 +1,23 @@
 {
-  "name": "gotrue-js",
-  "description": "GoTrue API client for JavaScript",
-  "version": "0.9.29",
-  "dependencies": {
-    "micro-api-client": "^3.3.0",
-    "npm-run-all": "^4.1.5"
-  },
+  "name": "next-fetch-monorepo",
+  "description": "",
+  "version": "1.0.0",
+  "author": "",
+  "keywords": [],
   "devDependencies": {
-    "@ava/babel": "^2.0.0",
-    "@babel/cli": "^7.20.7",
-    "@babel/core": "^7.20.12",
-    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
-    "@babel/preset-env": "^7.20.2",
-    "ava": "^3.15.0",
-    "babelify": "^10.0.0",
-    "browserify": "^16.5.2",
-    "esm": "^3.2.25",
-    "nyc": "^15.1.0",
-    "sinon": "^12.0.1",
-    "typescript": "^4.9.4",
-    "uglify-js": "^3.17.4"
+    "@changesets/cli": "^2.26.0",
+    "@svitejs/changesets-changelog-github-compact": "^0.1.1",
+    "turbo": "^1.6.3"
   },
-  "main": "lib/index.js",
-  "types": "index.d.ts",
+  
   "scripts": {
-    "babelify": "browserify src/index.js -t [ babelify --presets [ @babel/preset-env ] --plugins [ @babel/plugin-proposal-object-rest-spread ] ] | uglifyjs > browser/gotrue.js",
-    "prepare": "run-s compile",
-    "prepublishOnly": "run-s prepublishOnly:*",
-    "prepublishOnly:checkout": "run-local \"git checkout main\"",
-    "prepublishOnly:pull": "run-local \"git pull\"",
-    "prepublishOnly:install": "run-local \"npm ci\"",
-    "prepublishOnly:test": "npm test",
-    "compile": "babel src -d lib"
-  }
+    "build": "pnpm turbo run build",
+    "dev": "pnpm turbo run dev",
+    "test": "pnpm turbo run test",
+    "version:prepare": "changeset version && pnpm install --no-frozen-lockfile",
+    "version:publish": "changeset publish"
+  },
+  "private": true,
+  "license": "ISC",
+  "packageManager": "pnpm@7.3.0"
 }
