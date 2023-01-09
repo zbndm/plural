@@ -4,13 +4,13 @@ on:
   push:
     branches:
     - main
-    tags:
-    - '!*'
+    # tags:
+    # - '!*'
 
 env:
   NODE_VERSION: '16'
-  TURBO_TEAM: ${{ secrets.TURBOREPO_REMOTE_CACHING_TEAM }}
-  TURBO_TOKEN: ${{ secrets.TURBOREPO_REMOTE_CACHING_TOKEN }}
+  TURBO_TEAM: k6
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
